@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .slider {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .nav-btn {
+            all: unset;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            color: #05d9e8;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <img id="slider-img" src="Image1.jpg" alt="Slide">
+        <button class="nav-btn prev" onclick="changeImage(-1)">❮</button>
+        <button class="nav-btn next" onclick="changeImage(1)">❯</button>
+    </div>
+
+    <script>
+        const images = [
+            "Image1.jpg",
+            "Image2.jpg",
+            "Image3.jpg"
+        ];
+        
+        let index = 0;
+        const sliderImg = document.getElementById("slider-img");
+
+        function changeImage(direction) {
+            index = (index + direction + images.length) % images.length;
+            sliderImg.src = images[index];
+        }
+    </script>
+
+</body>
+</html>
