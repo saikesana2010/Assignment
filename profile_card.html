@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Profile Card</title>
+    
+    <style>
+        :root {
+            --primary-color: #3498db; /* Azure Blue */
+            --secondary-color: #2c3e50; /* Charcoal Gray */
+            --light-bg: #f4f4f4; /* Light Grey */
+            --text-color: #333; /* Dark Grey */
+            --shadow-color: rgba(0, 0, 0, 0.15); /* Subtle Shadow */
+            --transition-duration: 0.3s; /* Smooth Transition */
+            --border-radius: 10px; /* Rounded Corners */
+            --profile-pic-size: 150px; /* Profile Picture Size */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--light-bg);
+            margin: 0;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px var(--shadow-color);
+            text-align: center;
+            padding: 30px;
+            width: 300px;
+            transition: transform var(--transition-duration) ease-in-out;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-pic {
+            width: var(--profile-pic-size);
+            height: var(--profile-pic-size);
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--primary-color);
+        }
+
+        .name {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .designation {
+            font-size: 1em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 480px) {
+            .profile-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="name">Nagasai Kesana</div>
+        <div class="designation">Fresher</div>
+        <div class="bio">Passionate about creating intuitive and impactful digital experiences. I thrive on solving complex problems and pushing the boundaries of technology.</div>
+        
+        <!-- Social Media Links with PNG Icons -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/saikesana2010/" target="_blank" aria-label="LinkedIn Profile">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/saikesana2010" target="_blank" aria-label="GitHub Profile">
+                <img src="github.png" alt="GitHub">
+            </a>
+            <a href="https://x.com/child_chapathii" target="_blank" aria-label="Twitter Profile">
+                <img src="twitter.png" alt="Twitter">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
